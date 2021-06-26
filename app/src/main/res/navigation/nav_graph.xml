@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_image_list">
+
+    <fragment
+        android:id="@+id/nav_image_list"
+        android:name="com.faraji.mvibase.example.ui.image.list.ImageListFragment"
+        android:label="Cat Images">
+
+        <action
+            android:id="@+id/actionImageListToImageDetail"
+            app:destination="@id/nav_image_detail">
+
+            <argument
+                android:name="imageId"
+                app:argType="string" />
+
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_image_detail"
+        android:name="com.faraji.mvibase.example.ui.image.detail.ImageDetailFragment"
+        android:label="Full Size">
+        <argument
+            android:name="imageId"
+            app:argType="string" />
+    </fragment>
+
+
+</navigation>
