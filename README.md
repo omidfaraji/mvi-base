@@ -1,3 +1,4 @@
+[![](https://jitpack.io/v/omidfaraji/mvi-base.svg)](https://jitpack.io/#omidfaraji/mvi-base)
 
 ## MVI-Base
 
