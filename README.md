@@ -25,22 +25,23 @@ You can integrate MVI-Base framework with in your project with just two followin
 Add it in your root build.gradle at the end of repositories:
 ```
 allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-	}
+    repositories {
+    	...
+    	maven { url 'https://jitpack.io' }
+    }
 }
 ```
 
 **Step 2.** Add the dependency
 ```
 dependencies {
-	    implementation 'com.github.omidfaraji:mvi-base:Tag'
+    implementation 'com.github.omidfaraji:mvi-base:Tag'
 }
 ```
 &nbsp;
 
 ---
+
 &nbsp;
 
 # MVI-Base Boilerplate 
