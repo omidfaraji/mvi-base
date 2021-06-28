@@ -11,10 +11,11 @@ import com.faraji.mvibase.example.presentation.image.detail.ImageDetailViewState
 import com.faraji.mvibase.example.utils.extension.load
 import com.faraji.mvibase.example.utils.extension.showToast
 import com.faraji.mvibase.view.MviFragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.merge
 
-
+@AndroidEntryPoint
 class ImageDetailFragment :
     MviFragment<FragmentImageDetailBinding, ImageDetailIntent, ImageDetailViewState, ImageDetailEvent, ImageDetailViewModel>() {
 
