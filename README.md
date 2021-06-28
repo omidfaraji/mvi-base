@@ -2,7 +2,7 @@
 
 # MVI-Base
 
-##### A small framework written in Kotlin for implementing MVI Architecture.
+### A small framework written in Kotlin for implementing MVI Architecture.
 
 &nbsp;
 
