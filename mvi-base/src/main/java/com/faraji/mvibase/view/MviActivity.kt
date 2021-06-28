@@ -11,7 +11,6 @@ import com.faraji.mvibase.utils.logD
 import com.faraji.mvibase.utils.logE
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
 
 abstract class MviActivity<VB : ViewBinding, I : MviIntent, S : MviViewState, E : MviViewEvent, VM : MviViewModel<I, *, S, E>> :
     BaseMviActivity<VB>() {
@@ -34,11 +33,11 @@ abstract class MviActivity<VB : ViewBinding, I : MviIntent, S : MviViewState, E 
                 .catch { logE(TAG, "Error", it) }
                 .collect()
         }
-        lifecycleScope.launch {
-            merge(intents(), intentChanel.receiveAsFlow())
-                .onEach { viewModel.intentChannel.send(it) }
-                .collect()
-        }
+
+        merge(intents(), intentChanel.receiveAsFlow())
+            .onEach { viewModel.intentChannel.send(it) }
+            .launchIn(lifecycleScope)
+
         viewModel.events
             .onEach { logD(TAG, "Event Received: $it") }
             .onEach { handleEvent(it) }
