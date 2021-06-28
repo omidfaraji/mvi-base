@@ -1,4 +1,4 @@
-package com.faraji.mvibase.example.di.binder
+package com.faraji.mvibase.example.data.di
 
 import com.faraji.mvibase.example.data.repository.CatRepositoryImpl
 import com.faraji.mvibase.example.domain.repository.CatRepository

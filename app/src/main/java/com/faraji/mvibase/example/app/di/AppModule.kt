@@ -1,4 +1,4 @@
-package com.faraji.mvibase.example.di.module
+package com.faraji.mvibase.example.app.di
 
 import dagger.Module
 import dagger.hilt.InstallIn

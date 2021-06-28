@@ -1,4 +1,4 @@
-package com.faraji.mvibase.example.di.module
+package com.faraji.mvibase.example.data.di
 
 import android.content.Context
 import com.faraji.mvibase.BuildConfig

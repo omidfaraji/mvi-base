@@ -1,4 +1,4 @@
-package com.faraji.mvibase.example.di.binder
+package com.faraji.mvibase.example.domain.di
 
 import com.faraji.mvibase.example.domain.usecase.GetFullImageUseCase
 import com.faraji.mvibase.example.domain.usecase.GetFullImageUseCaseImpl
