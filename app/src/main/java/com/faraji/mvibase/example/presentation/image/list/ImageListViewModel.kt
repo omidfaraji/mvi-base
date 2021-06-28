@@ -104,7 +104,7 @@ class ImageListViewModel @Inject constructor(
         }
     }
 
-    override suspend fun handleActions(action: ImageListAction) {
+    override suspend fun handleAction(action: ImageListAction) {
         when (action) {
             is ImageListAction.LoadMore -> loadNextPage()
             is ImageListAction.Refresh -> refresh()

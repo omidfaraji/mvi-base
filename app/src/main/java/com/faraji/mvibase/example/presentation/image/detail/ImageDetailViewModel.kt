@@ -45,7 +45,7 @@ class ImageDetailViewModel @Inject constructor(
     }
 
 
-    override suspend fun handleActions(action: ImageDetailAction) {
+    override suspend fun handleAction(action: ImageDetailAction) {
         when (action) {
             is ImageDetailAction.Init -> {
                 imageId = action.imageId

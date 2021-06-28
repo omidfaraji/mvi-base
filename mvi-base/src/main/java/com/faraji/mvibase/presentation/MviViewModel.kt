@@ -31,12 +31,6 @@ abstract class MviViewModel<I : MviIntent, A : MviAction, S : MviViewState, E : 
         get() = eventChannel.receiveAsFlow()
 
 
-    fun sendEvent(eventState: E) {
-        eventChannel.trySend(eventState)
-        logD(TAG, "Event Sent: $eventState")
-    }
-
-
     init {
         viewModelScope.launch {
             processIntents()
@@ -54,14 +48,14 @@ abstract class MviViewModel<I : MviIntent, A : MviAction, S : MviViewState, E : 
         intentChannel.consumeAsFlow()
             .onEach { logD(TAG, "Intent Received: $it") }
             .map { intentToAction(it) }
-            .onEach { handleActions(it) }
+            .onEach { handleAction(it) }
             .launchIn(viewModelScope)
     }
 
 
     abstract fun intentToAction(intent: I): A
 
-    abstract suspend fun handleActions(action: A)
+    abstract suspend fun handleAction(action: A)
 
     open fun sendState(state: S) {
         internalState.value = state
@@ -77,6 +71,11 @@ abstract class MviViewModel<I : MviIntent, A : MviAction, S : MviViewState, E : 
     fun clearState() {
         internalState.value = getInitialState()
         logD(TAG, "State Sent: $state")
+    }
+
+    fun sendEvent(eventState: E) {
+        eventChannel.trySend(eventState)
+        logD(TAG, "Event Sent: $eventState")
     }
 
     override fun onCleared() {
