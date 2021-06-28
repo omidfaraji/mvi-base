@@ -14,9 +14,7 @@ class MainActivity : BaseMviActivity<ActivityMainBinding>() {
 
     override val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+    override fun initView(savedInstanceState: Bundle?) {
         val navController = findNavController(R.id.nav_host_fragment)
         val topLevelIds = setOf(R.id.nav_image_list)
         binding.toolbar.setupWithNavController(

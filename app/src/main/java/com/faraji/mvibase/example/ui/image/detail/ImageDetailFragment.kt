@@ -23,12 +23,10 @@ class ImageDetailFragment :
 
     override val viewModel: ImageDetailViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun initView(savedInstanceState: Bundle?) {
         val imageId = ImageDetailFragmentArgs.fromBundle(requireArguments()).imageId
         sendIntent(ImageDetailIntent.Init(imageId))
     }
-
 
     override fun intents(): Flow<ImageDetailIntent> {
         return merge()
